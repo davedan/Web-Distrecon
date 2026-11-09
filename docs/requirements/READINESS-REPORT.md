@@ -2,30 +2,47 @@
 
 ## Estado
 
-**NEEDS_DECISIONS** — Publicado como borrador de trabajo por solicitud del propietario. El paquete es suficiente para revisar y continuar descubrimiento, pero no está listo para aprobar ni para entregar a Business Analysis como línea base cerrada.
+**READY_FOR_BUSINESS_ANALYSIS_DISCOVERY**
 
-## Artefactos
+La línea base de producto contiene alcance, roles, autenticación, canales de entrada, ciclo de pedido, custodia de archivos, retención, notificaciones, operación de pedidos inactivos y límites del MVP. Puede entregarse a Business Analysis para producir requisitos funcionales verificables.
 
-- `PDD.md`: definición de producto candidata.
-- `docs/requirements/FUNCTIONAL-DISCOVERY.md`: flujos y comportamiento por explorar.
-- `docs/requirements/DECISIONS.md`: decisiones y preguntas abiertas.
-- `contracts/experience/UXD-DRAFT.md`: propuesta UX/UI y fuente visual.
+No está lista para arquitectura ni desarrollo: continúan escalaciones técnicas, contenido y licencia de plantilla.
 
-## Hallazgos de preflight
+## Cobertura consolidada
 
-| ID | Perspectiva | Severidad | Hallazgo | Disposición |
-|---|---|---|---|---|
-| FIND-0001 | Producto / privacidad | BLOCKING | No existe plazo ni política de conservación/borrado de archivos de clientes. | OPEN — UPD-001 |
-| FIND-0002 | Negocio / QA | BLOCKING | No está definido el comportamiento tras revisión de un archivo no imprimible o cambio de precio. | OPEN — UPD-002 |
-| FIND-0003 | Operaciones | HIGH | No está definido el canal de avisos ni los plazos de recogida. | OPEN — UPD-003, UPD-004 |
-| FIND-0004 | UX / legal | HIGH | La referencia Pressworks no tiene aún licencia, revisión de activos ni alcance de adaptación verificados. | OPEN — UPD-005 |
-| FIND-0005 | Contenido | MEDIUM | Falta confirmar horario final y activos fotográficos antes de publicar contenido local. | OPEN — UPD-006 |
-| FIND-0006 | Arquitectura | MEDIUM | Payload y Turso son una restricción de propietario, pero no hay Architecture Contract aprobado. | OPEN — escalación a Arquitectura después de PDD/FR |
+| Área | Estado |
+|---|---|
+| Plataforma pública/privada y roles | Definido |
+| Registro, verificación, cuentas y permisos | Definido |
+| Pedido web, manual, correo e incidencias | Definido |
+| Cliente inactivo y doble activación | Definido |
+| Archivos, avisos, borrado e historial | Definido |
+| Recogida y plazos operativos | Definido a nivel de producto |
+| SEO, verticales y referencia visual | Definido a nivel de producto |
+| Presupuesto manual | Diferido como deuda |
+| Arquitectura y seguridad | Pendiente de Arquitectura |
 
-## Cobertura actual
+## No bloquea el análisis funcional
 
-La visión, actores, alcance, servicios confirmados, flujos centrales, exclusiones y riesgos están documentados. Faltan reglas de excepción, privacidad, notificaciones y compromisos operativos que el Business Analyst necesita para producir requisitos verificables sin inventar comportamiento.
+- Catálogo/precios reales y horario público final: se modelan como configuración pendiente.
+- Panel de métricas: BA debe definir requisitos y aceptación desde las métricas previstas.
+- Fotos y textos definitivos: contenido posterior.
+- Pressworks: puede guiar UX, pero no importarse sin licencia.
 
-## Próximo paso
+## Requiere escalación antes de desarrollo
 
-Resolver UPD-001 a UPD-005, actualizar este paquete y presentar el PDD consolidado para revisión explícita del propietario. Solo entonces se debe solicitar el análisis funcional. La publicación en GitHub no equivale a aprobación BMSF, ni a autorización de arquitectura o desarrollo.
+1. Auth/RBAC, Payload/Turso y sesión.
+2. Almacenamiento seguro, antivirus, límites, borrado, backup y auditoría.
+3. Buzón de correo e ingestión de adjuntos.
+4. Emails transaccionales, entregabilidad y recuperación de contraseña.
+5. Protección de datos, política final y cobro real futuro.
+6. Licencia/procedencia de plantilla y activos.
+
+## Siguiente paso
+
+1. Business Analyst crea Functional Requirements trazables desde PDD y Functional Discovery.
+2. Propietario valida las decisiones abiertas de catálogo, notificaciones y cuadro de mando.
+3. Arquitectura produce Architecture Contract y resuelve las escalaciones técnicas.
+4. UX/UI actualiza pantallas a partir de FR y Architecture Contract.
+
+La publicación en GitHub no constituye aprobación BMSF ni autorización de desarrollo.

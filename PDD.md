@@ -1,149 +1,147 @@
 # PDD — Distrecon
 
-> Candidato externo de Definición de Producto. Estado: **DRAFT**. No es un artefacto BMSF aprobado.
+> Estado: **CONSOLIDATED_FOR_BA_DISCOVERY**. Producto definido para análisis funcional; no es Architecture Contract ni autorización de desarrollo.
 
 - Producto: Distrecon
-- Repositorio: `davedan/Web-Distrecon`
 - Idioma inicial: español
+- Ubicación: Av. de Madrid, 18, 28229 Villanueva del Pardillo
+- Contacto público: 918 15 06 30 · 918 15 18 24 · distrecon@distrecon.com
+- Versión: 0.2.0
 - Fecha: 9 de noviembre de 2026
-- Versión: 0.1.0
 
-## Problem
+## Problema y objetivo
 
-Distrecon es una copistería e imprenta local de Villanueva del Pardillo cuyos clientes hoy necesitan resolver encargos de documentos, planos, encuadernaciones y otros trabajos de impresión con rapidez y confianza. La oportunidad es convertir la web en una vía de captación local y de pedido: explicar cada servicio por necesidad, permitir configurar trabajos estándar, calcular un precio desde reglas administrables y preparar su recogida en tienda.
+Distrecon necesita captar demanda local de copistería, impresión y acabados gráficos, y convertirla en pedidos trazables recogidos en tienda. La plataforma debe consolidar pedidos web, de mostrador, teléfono y correo para que el equipo gestione el negocio sin perder la experiencia digital del cliente.
 
-## Target users
+## Alcance de plataforma
 
-- Particulares con copias, trámites, documentos, pósteres u otros trabajos puntuales.
-- Estudiantes que necesitan imprimir y encuadernar apuntes o trabajos.
-- Autónomos y pequeñas empresas con trabajos recurrentes, presentaciones y documentos profesionales.
-- Arquitectos y delineantes con planos y trabajos de gran formato.
-- Abogados con expedientes, dossiers y documentación que requiere presentación cuidada.
-- Personal de Distrecon que revisa, produce, entrega y administra encargos.
+Una sola plataforma contiene:
 
-## Desired outcomes
+1. **Web pública, sin login:** SEO local, páginas de servicios y verticales, contacto, guía de archivos y captación.
+2. **Acceso:** registro e inicio de sesión; protege solo zonas privadas.
+3. **Zona privada por rol:** el sistema muestra el área adecuada a cada identidad.
+4. **CMS:** Payload, accesible exclusivamente al superadministrador.
 
-- Que un visitante local identifique rápidamente un servicio aplicable a su necesidad y pueda iniciar un pedido.
-- Que el cliente pueda consultar el precio de demostración, confirmar el pedido y seguir su estado hasta la recogida.
-- Que el equipo disponga de una cola única, trazable y operable de pedidos.
-- Que la web consolide presencia local en búsquedas de copistería, impresión y servicios especializados sin crear páginas repetitivas de bajo valor.
-- Las métricas y objetivos numéricos se fijarán tras establecer una línea base de visitas, pedidos y contactos.
+No son aplicaciones separadas. Payload y Turso son restricciones tecnológicas indicadas por el propietario para Arquitectura, no decisiones arquitectónicas aprobadas.
 
-## Product principles and constraints
+## Usuarios y roles exclusivos
 
-- La experiencia y el contenido inicial se publican en español.
-- El MVP atiende pedidos con recogida en Av. de Madrid, 18, Villanueva del Pardillo; no incluye entrega a domicilio.
-- La web debe reconocer necesidades por perfil y por servicio sin prometer capacidades no vigentes.
-- Todos los precios y disponibilidad deben proceder de un catálogo administrable; los importes actuales son de demostración.
-- La pasarela de pago es un mockup en el MVP: no se realizan cobros reales.
-- La cuenta de cliente, los archivos y los pedidos requieren controles de acceso, transparencia sobre conservación y minimización de datos.
-- El propietario ha indicado Payload y Turso como restricciones tecnológicas deseadas. Son insumos para Arquitectura, no una arquitectura aprobada.
-- Pressworks se usa como referencia de experiencia visual y flujo; su licencia, activos y posible adaptación de código requieren verificación independiente.
+| Rol | Alcance |
+|---|---|
+| Superadministrador | Único acceso al CMS; gestiona configuración, cuentas, operación y correcciones excepcionales de email. Solo puede cambiar su propia contraseña. |
+| Dueño | Gestiona clientes, cuentas de dueños, pedidos, operación, catálogo/configuración permitida y telemetría. Puede gestionar su propia cuenta. |
+| Cliente | Gestiona únicamente su perfil, archivos vigentes, pedidos, historial y notificaciones. |
 
-## In scope
+Cada cuenta tiene exactamente un rol: superadministrador, dueño o cliente. No hay roles combinados.
 
-- **CAP-001 — Captación pública local:** inicio, contacto, ubicación, servicios y contenido útil para SEO local.
-- **CAP-002 — Soluciones por perfil:** estudiantes, particulares, autónomos/empresas, arquitectura/delineación y documentación jurídica.
-- **CAP-003 — Guía de archivos:** preparación de PDF, acabados, recogida y preguntas frecuentes.
-- **CAP-004 — Cuenta de cliente:** registro, acceso, perfil, historial y trabajos disponibles.
-- **CAP-005 — Configurador de pedido:** subida de uno o varios PDF y configuración por trabajo.
-- **CAP-006 — Precio y carrito:** total calculado mediante reglas administrables, con valores de demostración.
-- **CAP-007 — Confirmación y pago simulado:** confirmación visual del pedido sin integración financiera.
-- **CAP-008 — Seguimiento:** estados comprensibles desde pedido confirmado hasta recogida.
-- **CAP-009 — Operación interna:** cola de pedidos, ficha del trabajo, cambio de estados, clientes e incidencias.
-- **CAP-010 — Catálogo operativo:** administración de servicios, acabados, disponibilidad y reglas de precio.
-- **CAP-011 — Archivos reutilizables:** el cliente puede consultar y repetir trabajos mientras los archivos estén disponibles.
+## Captación pública y SEO
 
-## Out of scope
+- Posicionamiento local de copistería, impresión, planos/gran formato y acabados gráficos.
+- Verticales reales: particulares, estudiantes, autónomos/pequeñas empresas, arquitectura/delineación y documentación jurídica.
+- Servicios activos: impresión documental, fotocopias, escaneado, encuadernaciones, planos/gran formato, pósteres/fotografía y material de oficina.
+- Referencia visual: Pressworks. Puede inspirar jerarquía, navegación y recorrido; no autoriza copiar código, textos, imágenes ni activos sin licencia verificada.
+- Recogida únicamente en tienda; sin reparto ni transportistas.
 
-- Cobros reales, suscripciones, financiación, reembolsos o integración con pasarelas de pago.
-- Entrega a domicilio, transportistas o puntos de recogida externos.
-- Facturación, contabilidad, inventario, compras, costes industriales y planificación de maquinaria.
-- Conversión automática de formatos de Office e imágenes en el MVP; el formato inicial aceptado es PDF.
-- Descuentos o paquetes comerciales reales hasta que exista un catálogo aprobado.
-- Páginas de posicionamiento duplicadas por localidad o profesión.
-- Decisiones de infraestructura, autenticación, almacenamiento o arquitectura no aprobadas.
+## Cuenta y acceso de cliente
 
-## Capabilities
+- Registro obligatorio antes de cargar archivos o crear pedidos web.
+- Datos de alta: email único, contraseña, nombre obligatorio, apellidos opcionales y teléfono obligatorio.
+- Verificación obligatoria de email antes del primer pedido.
+- Tras verificar, la ficha se crea activa por defecto.
+- El alta exige aceptación explícita de términos; se registra versión y fecha, con enlace a privacidad.
+- El cliente puede editar nombre, apellidos, teléfono y contraseña; no puede cambiar email.
+- Recuperación de contraseña por enlace al email verificado y regreso posterior al login.
+- El email es clave única. Un dueño que intente crear una ficha con email existente no puede duplicarla: ve la cuenta encontrada y decide si vincula el pedido o corrige/cancela el alta.
+- Solo el superadministrador puede corregir un email existente.
+- Las cuentas de dueños se crean con invitación por email para establecer contraseña.
 
-### CAP-001 — Captación pública local
+## Pedidos y canales
 
-**Actor:** visitante.  
-**Objetivo:** comprender qué ofrece Distrecon, llegar a tienda o comenzar un pedido.  
-**Resultado esperado:** el visitante puede navegar a un servicio, solución por perfil, contacto o configurador.  
-**Aceptación de producto:** la dirección, los dos teléfonos y el correo de Distrecon aparecen de forma consistente; las páginas tienen una acción clara.
+### Canales activos
 
-### CAP-002 — Soluciones por perfil
+- Web: cliente autenticado.
+- Tienda: pedido creado por dueño, incluyendo carga de archivos aportados en pendrive.
+- Teléfono: pedido creado por dueño.
+- Correo: entrada a revisar manualmente por dueño; no crea cliente ni imprime automáticamente.
 
-**Actor:** visitante.  
-**Objetivo:** reconocer la solución asociada a su necesidad.  
-**Comportamiento:** cada perfil dispone de información diferenciada, casos de uso, preguntas frecuentes y una acción hacia el servicio/configurador adecuado.  
-**Regla:** solo se publican páginas para capacidades activas y explicables de Distrecon.
+Todos terminan en una cola común filtrable por origen. WhatsApp Business es deuda técnica, no integración MVP.
 
-### CAP-004 a CAP-007 — Pedido estándar
+### Pedido web estándar
 
-**Actor:** cliente autenticado.  
-**Flujo resumido:** sube PDF, configura uno o varios trabajos, revisa precio y recogida, confirma datos, recorre pago simulado y recibe una confirmación persistente.  
-**Opciones iniciales:** formato, color, una o dos caras, orientación, páginas por cara, gramaje, copias, encuadernación, tapas y observaciones.  
-**Reglas:** cada trabajo mantiene sus opciones; el pedido conserva una instantánea del precio y configuración; el importe es de demostración hasta que se carguen reglas reales.
+1. Cliente registrado, verificado y activo.
+2. Carga PDF y configura uno o varios trabajos.
+3. Ve precio calculado desde catálogo configurable, con importes de demostración.
+4. Confirma y completa pago simulado.
+5. Se crea pedido persistente para recogida en tienda.
 
-### CAP-008 a CAP-010 — Operación del pedido
+El pago es simulado en MVP; no hay cobros, reembolsos, facturación ni pasarela real.
 
-**Actor:** personal autorizado de Distrecon.  
-**Flujo resumido:** pedido confirmado → en revisión → requiere aclaración, en producción o cancelado → listo para recoger → entregado.  
-**Resultado esperado:** el personal consulta archivos y especificaciones, actualiza el estado y administra el catálogo sin alterar pedidos ya confirmados.
+### Aprobación y estados
 
-### CAP-011 — Área de cliente y archivos
+Estados operativos: **Recibido**, **Pendiente de revisión**, **Pendiente de confirmación**, **Confirmado**, **En producción**, **Listo para recoger**, **Entregado**, **Pendiente de información**, **Requiere tu acción** y **Cancelado por el cliente**.
 
-**Actor:** cliente autenticado.  
-**Objetivo:** consultar pedidos, repetir encargos y gestionar trabajos disponibles.  
-**Reglas:** se informará del plazo de disponibilidad; el cliente podrá eliminar un archivo salvo que esté bloqueado por producción; solo el personal necesario para producir el encargo tendrá acceso.
+- Dueños y superadministrador configuran la aprobación automática de pedidos web; valor inicial: desactivada.
+- Si está activada, solo aprueba pedidos de cliente activo, archivo válido y pago simulado completado.
+- Pedidos creados por dueño nacen aprobados por defecto, salvo que el dueño elija pendiente de confirmación.
+- El dueño controla el paso a producción.
+- Si aparece una incidencia de archivo, el pedido se pausa en “Requiere tu acción”. El cliente puede sustituir el archivo o cancelar.
+- Al reemplazar un archivo se recalcula el precio por las páginas/configuración reales; no se conserva el binario anterior.
+- Un pedido entregado permanece como **Entregado**. “Archivo caducado” es solo disponibilidad del fichero, nunca estado del pedido.
 
-## Assumptions
+### Clientes inactivos y doble activación
 
-- El propietario confirma que siguen activos: impresión de documentos, fotocopias, escaneado, encuadernaciones, impresión/ploteado de planos, gran formato, pósteres/fotografía, material de oficina y atención a particulares y empresas.
-- Los pedidos estándar se inician con PDF.
-- La recogida se realiza exclusivamente en tienda en el MVP.
-- El sitio usará fotografías y activos de Distrecon cuando estén disponibles.
+- Cada ficha de cliente tiene estado **Activo / Inactivo**.
+- Un pedido entrante de cliente inactivo genera alerta interna “Cliente inactivo · revisión manual” y queda fuera de la cola ordinaria.
+- Primero un dueño/superadministrador debe activar al cliente desde su ficha.
+- Después debe abrir el pedido concreto y pulsar explícitamente “Activar pedido”.
+- Reactivar un cliente no libera pedidos retenidos. Cada pedido exige activación propia.
+- La ficha de cliente muestra la lista de pedidos, estados y alertas, con acceso directo al pedido.
 
-## Dependencies
+## Archivos, historial y notificaciones
 
-- Confirmación de horario, dominio y accesos de publicación.
-- Catálogo de servicios, acabados, límites y reglas de precio reales.
-- Decisión de conservación de archivos y revisión legal de privacidad/condiciones.
-- Arquitectura aprobada para identidad, base de datos, almacenamiento de archivos y administración.
-- Verificación de licencia, procedencia y permisos de la plantilla Pressworks antes de reutilizar código o activos.
+- Archivo binario disponible durante 30 días desde su última carga o sustitución.
+- Avisos de caducidad a 15, 10 y 5 días.
+- Toda notificación al cliente aparece en su centro de notificaciones y por email.
+- Al día 30 se elimina el archivo. El historial conserva pedido, configuración, precio, estados y trazabilidad; donde antes habría enlace se muestra “Archivo caducado”.
+- Historial de pedidos: indefinido para clientes, dueños y superadministrador.
+- Los archivos sustituidos se eliminan; el historial puede indicar que hubo sustitución sin conservar el binario previo.
+- Pedidos listos para recoger permanecen en ese estado hasta entrega. El producto físico no tiene regla automática de retirada; queda bajo custodia de Distrecon.
 
-## Risks
+## Operación y configuración
 
-- **RISK-001 — Privacidad documental:** los archivos pueden contener datos personales o sensibles. Mitigación: acceso mínimo, política de conservación visible y revisión de Arquitectura/privacidad.
-- **RISK-002 — Precio no viable:** una regla genérica puede no reflejar un encargo especial. Mitigación: estado “requiere aclaración” y ruta de presupuesto manual.
-- **RISK-003 — Capacidad operativa:** un pedido aceptado puede superar plazos o acabados disponibles. Mitigación: disponibilidad administrable y promesas de plazo validadas.
-- **RISK-004 — Adaptación de plantilla:** reutilizar código/activos sin evidencia de licencia puede bloquear desarrollo. Mitigación: usarla solo como referencia hasta verificarla.
+### Panel de dueños
 
-## Unresolved product decisions
+Centro de control con pedidos nuevos, revisiones, incidencias, producción, listos para recoger, pedidos de clientes inactivos y cola filtrable. Debe permitir trabajar pedidos manuales y ver origen, estado, historial y cliente.
 
-- **UPD-001:** plazo de conservación, borrado y posible reutilización de archivos. Propietario con asesoramiento de Arquitectura/privacidad. Impacto: alto.
-- **UPD-002:** comportamiento si un archivo no es imprimible, tiene error o exige un cambio de precio tras la revisión. Propietario. Impacto: alto.
-- **UPD-003:** canal de avisos de pedido y recogida: correo, WhatsApp, área privada o combinación. Propietario. Impacto: alto.
-- **UPD-004:** plazos de preparación, hora límite y promesa de recogida. Propietario. Impacto: alto.
-- **UPD-005:** licencia y nivel de reutilización de la plantilla Pressworks. Propietario/Arquitectura. Impacto: alto.
-- **UPD-006:** horario definitivo para contenido público. Propietario. Impacto: medio.
+Las métricas previstas incluyen carga por estado, incidencias, plazos, pedidos listos, origen, servicios solicitados, repetición y valor de pedidos. Mientras el pago sea simulado, no se denomina facturación.
 
-## Release and MVP boundaries
+### Configuración
 
-El MVP incluye la captación pública, soluciones por perfil, guía de archivos, cuenta de cliente, pedido configurable, precio de demostración, pago simulado, seguimiento y cola interna de pedidos para recogida en tienda. La integración de cobro real, reparto, facturación, stock y automatización industrial quedan diferidos.
+Dueños y superadministrador pueden configurar horario comercial, plazo de preparación por tipo de trabajo —30 minutos por defecto—, catálogo/precios/disponibilidad y activación de aprobación automática web. Los nuevos ajustes aplican a pedidos nuevos, no reescriben pedidos existentes.
 
-## Product Owner review
+## Fuera de alcance MVP
 
-Este documento se ha publicado como borrador externo por solicitud expresa del propietario el 9 de noviembre de 2026. No es aprobación de PDD por BMSF ni autorización de desarrollo.
+- Cobro real, reembolsos, facturación, contabilidad, inventario, compras y costes industriales.
+- Entrega a domicilio.
+- WhatsApp Business como canal integrado.
+- Solicitud de presupuesto manual para trabajos especiales: deuda de producto, no MVP.
+- Conversión automática de formatos Office o imágenes; el formato inicial de pedido es PDF.
+- SEO de páginas duplicadas por localidad o profesión.
+- Decisiones de arquitectura, infraestructura, autenticación técnica, correo, almacenamiento o seguridad.
 
-## Traceability
+## Dependencias y escalaciones
 
-- Estrategia por perfiles: DEC-0001.
-- Recogida exclusiva en tienda: DEC-0002.
-- Pedido con precio y pago simulado: DEC-0003.
-- Catálogo y precios administrables: DEC-0004.
-- Área de cliente y archivos: DEC-0005.
-- Referencia Pressworks: DEC-0006.
-- Datos de contacto: DEC-0007.
+Arquitectura debe resolver autenticación y permisos, Payload/Turso, almacenamiento privado, borrado y backups, antivirus/validación de adjuntos, buzón de correo, emails transaccionales, límites de archivos, protección de datos y futura pasarela real.
+
+Contenido debe aportar horario definitivo, activos visuales, catálogo y precios reales. La licencia de Pressworks debe verificarse antes de adaptar código o activos.
+
+## Deuda de producto
+
+| ID | Deuda | Motivo |
+|---|---|---|
+| DTD-001 | Solicitud de presupuesto manual para trabajos especiales. | Aplazada por propietario; no forma parte del MVP. |
+| DTD-002 | Integración de WhatsApp Business. | Posible canal futuro; requiere definición e integración segura. |
+
+## Aprobación de producto
+
+Este documento consolida decisiones comunicadas por el propietario. El siguiente destinatario es Business Analysis para transformar la línea base en requisitos funcionales verificables.

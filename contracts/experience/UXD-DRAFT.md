@@ -1,80 +1,58 @@
 # UXD-DRAFT — Distrecon Product Experience
 
-> Estado: **DRAFT**. Referencia UX/UI de trabajo; no es una puerta UX-G1 superada ni una aprobación para desarrollo.
+> Estado: **DRAFT**. Debe actualizarse tras los requisitos funcionales y Architecture Contract.
 
-## Proyecto y escenario
+## Alcance y procedencia
 
-- Proyecto: Distrecon.
-- Repositorio: `davedan/Web-Distrecon`.
-- Escenario: **GREENFIELD + TEMPLATE_ADAPTATION**.
-- Target previsto: experiencia web pública con cuenta de cliente y operación interna.
-- Upstream disponible: `PDD.md` borrador; no existen aún FR aprobados ni Architecture Contract.
+- Escenario: GREENFIELD + TEMPLATE_ADAPTATION.
+- Fuente visual: https://pressworks-print-shop-377031.hostingersite.com/
+- Se toma inspiración de jerarquía, doble CTA, catálogo y flujo; no se reutilizan código, textos ni activos sin licencia verificable.
+- Identidad y voz propias: Distrecon, español, Villanueva del Pardillo, impresión local y recogida en tienda.
 
-## Fuente y procedencia de plantilla
-
-- Fuente visual observada: https://pressworks-print-shop-377031.hostingersite.com/
-- Identificación visible: plantilla creada con Hostinger.
-- Uso actual permitido en este borrador: inspiración de estructura visual, jerarquía y recorrido.
-- No autorizado por este documento: copiar código, textos, fotografías, logotipo, activos, dependencias o instrucciones de la plantilla.
-- Evidencia pendiente: licencia, autor, versión, checksum, derechos de activos y compatibilidad técnica si se pretende adaptar código.
-
-## Hallazgos observados
-
-Pressworks presenta una cabecera limpia, gran titular, doble CTA, beneficios rápidos, catálogo visual, guía de impresión, cuenta, carrito y presupuesto instantáneo. Su recorrido es producto → cantidad → precio → carrito → carga/gestión de arte.
-
-## Adaptación de experiencia para Distrecon
-
-### Estrategia visual
-
-- Base clara, contraste alto, tipografía editorial legible y acentos inspirados en color de impresión.
-- Identidad propia a partir del logotipo de Distrecon y fotografías/activos con derechos confirmados.
-- Voz cercana y práctica, en español, centrada en Villanueva del Pardillo.
-- No se replica el tono juvenil, catálogo nacional ni promesa de entrega de Pressworks.
-
-### Navegación propuesta
+## Estructura de experiencia
 
 ```text
-Inicio · Servicios · Guía de archivos · Empresas · Contacto
-                                        └─ Tu cuenta · Carrito · Sube tu trabajo
+Web pública sin login
+  ├─ Inicio · Servicios · Verticales · Guía de archivos · Contacto
+  └─ Registro / login
+       └─ Zona privada por rol
+          ├─ Superadministración + CMS Payload
+          ├─ Dueños: operación, clientes, configuración
+          └─ Clientes: pedidos, archivos, notificaciones, perfil
 ```
 
-### Journeys críticos
+## Journeys críticos
 
-1. Visitante local → servicio/perfil → configurador o presupuesto.
-2. Cliente → cuenta → PDF/configuración → precio → pago simulado → seguimiento → recogida.
-3. Personal → cola → revisión → producción → listo → entrega.
-4. Cliente recurrente → área privada → repetir trabajo disponible.
+1. Visitante → registro → verificación de email → cliente activo → carga PDF → configurador → pago simulado → pedido.
+2. Dueño → alta/búsqueda de cliente → pedido tienda/teléfono → invitación automática si es nuevo → cola.
+3. Correo entrante → revisión manual → vinculación/alta controlada → pedido.
+4. Cliente inactivo → notificación marcada → activar cliente → abrir pedido → activar pedido.
+5. Incidencia → “Requiere tu acción” → sustituir o cancelar → revisión.
+6. Pedido listo → aviso → recogida → entregado.
+7. Archivo 15/10/5 días → notificación web+email → “Archivo caducado” al borrarse; pedido e historial continúan.
 
-### Inventario de pantallas
+## Pantallas necesarias
 
 | Área | Pantallas |
 |---|---|
-| Captación | Inicio, servicios, soluciones por perfil, guía de archivos, empresas, contacto/ubicación |
-| Pedido | Carga de archivos, configurador, carrito, pago simulado, confirmación |
-| Cliente | Registro/acceso, panel, pedidos, detalle/seguimiento, trabajos, presupuestos, perfil |
-| Personal | Cola de pedidos, ficha, cambio de estado, catálogo/precios, clientes, incidencias |
+| Público | Inicio, servicios, verticales, guía de archivo, contacto/ubicación |
+| Autenticación | Registro, aviso de verificación, login, recuperación/restablecimiento de contraseña |
+| Cliente | Inicio, pedidos, detalle, subida/configurador, pago simulado, historial, notificaciones, perfil |
+| Dueño | Inicio operativo, cola, detalle pedido, clientes/ficha, alta manual, cuentas de dueños, configuración |
+| Superadministrador | Todo lo anterior según permiso + CMS Payload |
 
-### Componentes y estados
+## Reglas UX
 
-- Cabecera, navegación móvil, CTA primario/secundario, tarjetas de servicio y perfil, pruebas de confianza, mapa y contacto.
-- Uploader, lista de archivos, configurador por trabajo, desglose de precio, carrito y progreso.
-- Estados: vacío, carga, archivo inválido, cálculo pendiente, acabado no disponible, error, permiso denegado, pedido confirmado, requiere aclaración, listo para recoger, archivo próximo a caducar.
-- Accesibilidad: semántica, etiquetas, foco visible, navegación por teclado, contraste suficiente, objetivos táctiles y reducción de movimiento.
+- Email no editable por cliente ni dueño.
+- Un pedido de cliente inactivo debe mostrar marca persistente y CTA de dos pasos, sin atajos.
+- “Archivo caducado” es disponibilidad de fichero; el pedido conserva estado como “Entregado”.
+- Estados deben usar lenguaje claro para clientes y detalle operativo para dueños.
+- CTA de pedido exige autenticación; no hay pedido anónimo.
+- Accesibilidad: etiquetas, foco visible, teclado, contraste, objetivos táctiles y mensajes de error explícitos.
 
-## Mapeo de producto a UX
+## Pendiente UX
 
-| Capacidad PDD | Superficie UX |
-|---|---|
-| CAP-001 / CAP-002 | Inicio, servicios y soluciones por perfil |
-| CAP-003 | Guía de archivos y FAQs |
-| CAP-004 / CAP-011 | Acceso, cuenta, pedidos y trabajos |
-| CAP-005 / CAP-006 / CAP-007 | Uploader, configurador, carrito y pago simulado |
-| CAP-008 / CAP-009 | Seguimiento de pedido, cola interna y ficha |
-| CAP-010 | Catálogo y reglas desde administración |
-
-## Riesgos y decisiones pendientes
-
-- No se puede afirmar licencia ni posibilidad de importar la plantilla.
-- No se puede diseñar mensaje de privacidad final sin conservación de archivos.
-- El diseño de pantallas de cuenta, archivos, autenticación y administración debe alinearse con Architecture Contract futuro.
-- Se requiere revisión UX independiente y ejecución QA antes de cualquier declaración UX-G1/UX-G2.
+- Matriz final de configurador por servicio.
+- Estados visuales de validación de PDF, limites y antivirus definidos por Arquitectura.
+- Copys finales, fotos, logo de alta resolución, horarios y licencias.
+- Deuda DTD-001 de presupuesto manual fuera de las pantallas MVP.
