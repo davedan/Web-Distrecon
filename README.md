@@ -4,16 +4,22 @@ Plataforma única para Distrecon: captación local de copistería e impresión, 
 
 ## Estado
 
-Documentación de producto **consolidada para discovery del Business Analyst**. No aprueba arquitectura ni desarrollo.
+Documentación de producto y análisis funcional en **borrador para revisión**. No aprueba arquitectura ni desarrollo.
 
 ## Documentación
 
 - [PDD](PDD.md) — definición consolidada de producto.
-- [Descubrimiento funcional](docs/requirements/FUNCTIONAL-DISCOVERY.md) — flujos, reglas y excepciones.
-- [Registro de decisiones](docs/requirements/DECISIONS.md) — decisiones confirmadas, deuda y preguntas abiertas.
-- [Informe de preparación](docs/requirements/READINESS-REPORT.md) — alcance listo y asuntos que escalar.
-- [UXD de trabajo](contracts/experience/UXD-DRAFT.md) — propuesta de experiencia y procedencia de la plantilla Printop.
+- [Descubrimiento funcional](docs/requirements/FUNCTIONAL-DISCOVERY.md) — flujos y excepciones iniciales.
+- [Registro de decisiones](docs/requirements/DECISIONS.md) — decisiones confirmadas, deuda y escalaciones.
+- [Informe de preparación](docs/requirements/READINESS-REPORT.md) — estado de producto y arquitectura pendiente.
+- [UXD de trabajo](contracts/experience/UXD-DRAFT.md) — plantilla Printop y experiencia propuesta.
+- [Requisitos funcionales BA](docs/business-analysis/FUNCTIONAL-REQUIREMENTS.md)
+- [Reglas de negocio BA](docs/business-analysis/BUSINESS-RULES.md)
+- [Casos de uso BA](docs/business-analysis/USE-CASES.md)
+- [Matriz de trazabilidad BA](docs/business-analysis/TRACEABILITY-MATRIX.md)
+- [Decisiones BA](docs/business-analysis/DECISIONS.md)
+- [Readiness BA](docs/business-analysis/READINESS-REPORT.md)
 
 ## Próximo paso
 
-Business Analysis convierte esta línea base en requisitos funcionales verificables. Arquitectura resolverá identidad, Payload, Turso, archivos, correo, seguridad y pagos reales.
+Revisión del propietario y Business Analysis. Después, Arquitectura define y el propietario aprueba el Architecture Contract antes de desarrollo.

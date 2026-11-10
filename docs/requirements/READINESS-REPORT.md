@@ -1,48 +1,41 @@
 # Informe de preparación — Distrecon
 
-## Estado
+## Estado BA
 
-**READY_FOR_BUSINESS_ANALYSIS_DISCOVERY**
+**READY_FOR_BA_REVIEW**
 
-La línea base de producto contiene alcance, roles, autenticación, canales de entrada, ciclo de pedido, custodia de archivos, retención, notificaciones, operación de pedidos inactivos y límites del MVP. Puede entregarse a Business Analysis para producir requisitos funcionales verificables.
+Se han creado requisitos, reglas, casos de uso y trazabilidad desde PDD v0.3.0. La revisión funciona como borrador BA: la aprobación formal BMSF del PDD y un Target Profile versionado no son verificables.
 
-No está lista para arquitectura ni desarrollo: continúan escalaciones técnicas, contenido y licencia de plantilla.
+## Evidencia de entrada
 
-## Cobertura consolidada
+- PDD de partida: commit `8902fb241c533bb52bf3b10bea0b177519765938`.
+- Consolidación BA: esta rama y PDD v0.3.0.
+- BMSF: se inspeccionaron PRODUCT-DEFINITION, WORKFLOW, GOVERNANCE, ARTIFACT-METADATA y DR-0002 en `davedan/BMSF-Arquitecture`.
+- Clasificación funcional propuesta: **Independent Web Application** con superficie pública SEO.
+- Target Profile: no se encontró definición canónica versionada verificable; no se presume capacidad técnica.
 
-| Área | Estado |
+## Cobertura
+
+| Área | Cobertura |
 |---|---|
-| Plataforma pública/privada y roles | Definido |
-| Registro, verificación, cuentas y permisos | Definido |
-| Pedido web, manual, correo e incidencias | Definido |
-| Cliente inactivo y doble activación | Definido |
-| Archivos, avisos, borrado e historial | Definido |
-| Recogida y plazos operativos | Definido a nivel de producto |
-| SEO, verticales y referencia visual | Definido a nivel de producto |
-| Presupuesto manual | Diferido como deuda |
-| Arquitectura y seguridad | Pendiente de Arquitectura |
+| Público/SEO y roles | Cubierta |
+| Registro, cuentas y permisos | Cubierta |
+| Catálogo, pedido, pago simulado | Cubierta |
+| Incidencias, cancelación, diferencia/reembolso simulado | Cubierta |
+| Archivos, historial, notificaciones y recogida parcial | Cubierta |
+| Operación y métricas iniciales | Cubierta |
+| Arquitectura, seguridad, almacenamiento y correo | Escalado |
+| Tarifas/catálogo reales y contenido final | Pendiente de configuración/contenido |
 
-## No bloquea el análisis funcional
+## Bloqueos para Arquitectura/Desarrollo
 
-- Catálogo/precios reales y horario público final: se modelan como configuración pendiente.
-- Panel de métricas: BA debe definir requisitos y aceptación desde las métricas previstas.
-- Fotos y textos definitivos: contenido posterior.
-- Pressworks: puede guiar UX, pero no importarse sin licencia.
+1. Falta Architecture Contract con aprobación expresa del propietario.
+2. Target Profile versionado no verificado.
+3. Gestión segura de archivos y correo pendiente.
+4. Catálogo, tarifa y límites reales pendientes.
+5. Licencia/dependencias/compatibilidad de Printop requieren revisión de Arquitectura.
+6. Pago real no forma parte del MVP.
 
-## Requiere escalación antes de desarrollo
+## Próximo paso
 
-1. Auth/RBAC, Payload/Turso y sesión.
-2. Almacenamiento seguro, antivirus, límites, borrado, backup y auditoría.
-3. Buzón de correo e ingestión de adjuntos.
-4. Emails transaccionales, entregabilidad y recuperación de contraseña.
-5. Protección de datos, política final y cobro real futuro.
-6. Licencia/procedencia de plantilla y activos.
-
-## Siguiente paso
-
-1. Business Analyst crea Functional Requirements trazables desde PDD y Functional Discovery.
-2. Propietario valida las decisiones abiertas de catálogo, notificaciones y cuadro de mando.
-3. Arquitectura produce Architecture Contract y resuelve las escalaciones técnicas.
-4. UX/UI actualiza pantallas a partir de FR y Architecture Contract.
-
-La publicación en GitHub no constituye aprobación BMSF ni autorización de desarrollo.
+Revisión del propietario y BA de los documentos de `docs/business-analysis/`. Tras conformidad, Arquitectura elabora propuesta y Architecture Contract; desarrollo permanece bloqueado hasta la aprobación expresa de ese contrato.
