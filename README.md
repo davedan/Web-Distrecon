@@ -19,6 +19,7 @@ Documentación de producto y análisis funcional en **borrador para revisión**.
 - [Matriz de trazabilidad BA](docs/business-analysis/TRACEABILITY-MATRIX.md)
 - [Decisiones BA](docs/business-analysis/DECISIONS.md)
 - [Readiness BA](docs/business-analysis/READINESS-REPORT.md)
+- [Catálogo inicial recomendado](docs/business-analysis/CATALOG-INITIAL-DEFAULTS.md)
 
 ## Próximo paso
 
