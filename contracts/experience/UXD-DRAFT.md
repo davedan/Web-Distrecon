@@ -7,7 +7,7 @@
 - Escenario: GREENFIELD + TEMPLATE_ADAPTATION.
 - Plantilla local: \`template/printop\`, Printop 1.0.0 de Wowtheme7; ZIP: \`template/printop.zip\`.
 - SHA-256 del ZIP inspeccionado: \`70A5E95E401FD5B0D0C8AEA0850B2B10911C300674818491019E49F5C2AAEA8B\`.
-- El código/HTML declara GPLv2 o posterior; el \`readme.txt\` indica que CSS, diseño y otros activos siguen la licencia adquirida. No hay evidencia de compra adjunta.
+- El código/HTML declara GPLv2 o posterior; el \`readme.txt\` indica que CSS, diseño y otros activos siguen la licencia adquirida. El propietario confirma que la licencia fue adquirida; el justificante no está adjunto al repositorio.
 - Se permite documentar su inventario y usarlo como referencia; no se importan ni distribuyen código, CSS, imágenes, fuentes u otros activos hasta validar licencia, dependencias y compatibilidad arquitectónica.
 - Identidad y voz propias: Distrecon, español, Villanueva del Pardillo, impresión local y recogida en tienda.
 
@@ -57,6 +57,6 @@ Web pública sin login
 - Matriz final de configurador por servicio.
 - Estados visuales de validación de PDF, limites y antivirus definidos por Arquitectura.
 - Copys finales, fotos, logo de alta resolución y horarios.
-- Antes de adaptar Printop: evidencia de compra/licencia, inventario de dependencias/activos y evaluación de compatibilidad por Arquitectura. La plantilla es una entrada de implementación, no una decisión de stack.
+- Antes de adaptar Printop: justificante de compra si se solicita, inventario de dependencias/activos y evaluación de compatibilidad por Arquitectura. La plantilla es una entrada de implementación, no una decisión de stack.
 - Deuda DTD-001 de presupuesto manual fuera de las pantallas MVP.
 - UX-G1 y UX-G2: no aplicados ni certificables; CAP-16 y su matriz están solo en la rama no fusionada \`feature/core-product-experience-v1\` de BMSF-Arquitecture.
