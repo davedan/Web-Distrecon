@@ -10,7 +10,7 @@
 | DEC-0002 | Web pública sin login; login solo abre zona privada según rol. |
 | DEC-0003 | Roles exclusivos: superadministrador, dueño y cliente. |
 | DEC-0004 | CMS Payload exclusivo de superadministrador; Payload/Turso son restricciones para Arquitectura. |
-| DEC-0005 | Idioma inicial español; referencia visual Pressworks sin autorización de copiar activos/código. |
+| DEC-0005 | Idioma inicial español; plantilla Printop 1.0.0 (Wowtheme7) como referencia/adaptación descargada. Código/HTML declara GPL, pero CSS, diseño y activos requieren validar la licencia comprada antes de reutilizarse. ZIP SHA-256: \`70A5E95E401FD5B0D0C8AEA0850B2B10911C300674818491019E49F5C2AAEA8B\`. |
 | DEC-0006 | Captación por servicios y verticales reales: particulares, estudiantes, autónomos/empresas, arquitectura/delineación y jurídico. |
 | DEC-0007 | Recogida exclusiva en tienda; sin reparto MVP. |
 | DEC-0008 | Precio configurable desde catálogo; pago simulado MVP. |
@@ -52,5 +52,5 @@
 | UPD-003 | Buzón de correo, ingestión segura de adjuntos y emails transaccionales. | Arquitectura |
 | UPD-004 | Catálogo de notificaciones de pedido y métricas definitivas del panel de dueños. | Business Analysis |
 | UPD-005 | Horario público definitivo, fotografías y contenido comercial. | Propietario |
-| UPD-006 | Licencia y posible reutilización de Pressworks. | Propietario + Arquitectura |
+| UPD-006 | Evidencia de compra/licencia de Printop, derechos de activos y compatibilidad con la arquitectura futura. | Propietario + Arquitectura |
 | UPD-007 | Cobro real, reembolsos y obligaciones asociadas cuando salga del mockup. | Arquitectura + legal/negocio |
