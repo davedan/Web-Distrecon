@@ -23,6 +23,7 @@ Las decisiones DEC-0001 a DEC-0029 se mantienen en el PDD v0.3.0. Las siguientes
 | DEC-0042 | Precio muestra base imponible, IVA y total; IVA incluido. |
 | DEC-0043 | Panel de dueños: estados, incidencias, pendientes de hoy, listos, origen, servicios y repetición. |
 | DEC-0044 | Plantilla Printop 1.0.0 sustituye a Pressworks. El propietario confirma compra; compatibilidad/licencia de activos se escalan a Arquitectura. |
+| DEC-0045 | Catálogo documental inicial: A5/A4/A3, gramajes 80–160 g según tamaño, B/N/color, caras, orientación, 1/2/4 páginas por cara y acabados básicos. Valores, límites y tarifa iniciales quedan en `docs/business-analysis/CATALOG-INITIAL-DEFAULTS.md` y son configurables. |
 
 ## Deuda de producto
 
