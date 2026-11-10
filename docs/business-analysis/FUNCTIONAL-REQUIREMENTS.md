@@ -24,7 +24,7 @@ blocking: { is_blocked: false, blockers: [] }
 | FR-0004 | **Perfil y credenciales.** Cliente modifica nombre/apellidos/teléfono y contraseña, pero no email. Dado olvido de contraseña, cuando solicita recuperación con email existente, entonces recibe enlace de restablecimiento. |
 | FR-0005 | **Roles.** Sistema concede exactamente un rol exclusivo por cuenta. Cliente no puede acceder a paneles internos; dueño no accede a CMS; solo superadministrador accede a CMS y corrige email. |
 | FR-0006 | **Catálogo publicable.** Dueño/superadministrador crea servicios no publicados. Dado servicio sin precio o plazo, cuando intenta publicarlo, entonces se rechaza. |
-| FR-0007 | **Configurador por servicio.** Servicio publicado expone únicamente sus propias opciones, valores obligatorios/opcionales y valores por defecto. |
+| FR-0007 | **Configurador por servicio.** Servicio publicado expone únicamente sus propias opciones, valores obligatorios/opcionales y valores por defecto. Para impresión documental inicial: A5/A4/A3, 80–160 g según tamaño, B/N/color, caras, orientación, 1/2/4 páginas por cara y acabados compatibles. |
 | FR-0008 | **Pedido web.** Cliente activo y verificado puede cargar uno o más PDF y configurar cada línea. Dado archivo múltiple, cuando configura cada uno, entonces cada línea conserva opciones/precio propios. |
 | FR-0009 | **Precio/pago simulado.** Checkout muestra base, IVA y total en euros. Dado pago simulado completado, entonces estado de pago es Completado y se crea pedido persistente. |
 | FR-0010 | **Flujo de aprobación.** Con aprobación automática desactivada, pedido web confirmado entra Pendiente de revisión. Si se activa, solo confirma con cliente activo, archivo válido y pago completado. |
