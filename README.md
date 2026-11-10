@@ -12,7 +12,7 @@ Documentación de producto **consolidada para discovery del Business Analyst**. 
 - [Descubrimiento funcional](docs/requirements/FUNCTIONAL-DISCOVERY.md) — flujos, reglas y excepciones.
 - [Registro de decisiones](docs/requirements/DECISIONS.md) — decisiones confirmadas, deuda y preguntas abiertas.
 - [Informe de preparación](docs/requirements/READINESS-REPORT.md) — alcance listo y asuntos que escalar.
-- [UXD de trabajo](contracts/experience/UXD-DRAFT.md) — referencia de experiencia y plantilla Pressworks.
+- [UXD de trabajo](contracts/experience/UXD-DRAFT.md) — propuesta de experiencia y procedencia de la plantilla Printop.
 
 ## Próximo paso
 
