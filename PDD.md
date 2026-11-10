@@ -54,6 +54,7 @@ Cada cuenta tiene exactamente un rol.
 - Varios archivos admiten configuraciones y precios propios.
 - Pago MVP: simulado. Estados: Pendiente/Completado.
 - Solicitud de presupuesto manual es deuda DTD-001, fuera de MVP.
+- Valores iniciales de catálogo, límites y tarifa: `docs/business-analysis/CATALOG-INITIAL-DEFAULTS.md`; editables por dueños/superadministrador.
 
 ## Operación, estado y excepciones
 
