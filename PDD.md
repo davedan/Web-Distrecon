@@ -39,7 +39,7 @@ Cada cuenta tiene exactamente un rol: superadministrador, dueño o cliente. No h
 - Posicionamiento local de copistería, impresión, planos/gran formato y acabados gráficos.
 - Verticales reales: particulares, estudiantes, autónomos/pequeñas empresas, arquitectura/delineación y documentación jurídica.
 - Servicios activos: impresión documental, fotocopias, escaneado, encuadernaciones, planos/gran formato, pósteres/fotografía y material de oficina.
-- Referencia visual: Pressworks. Puede inspirar jerarquía, navegación y recorrido; no autoriza copiar código, textos, imágenes ni activos sin licencia verificada.
+- Plantilla de referencia/adaptación: Printop 1.0.0 de Wowtheme7, disponible localmente en \`template/printop\`. ZIP inspeccionado: SHA-256 \`70A5E95E401FD5B0D0C8AEA0850B2B10911C300674818491019E49F5C2AAEA8B\`. Puede guiar la adaptación visual; no se importará código, CSS, diseño, imágenes ni otros activos sin validar la licencia comprada y sus dependencias.
 - Recogida únicamente en tienda; sin reparto ni transportistas.
 
 ## Cuenta y acceso de cliente
@@ -133,7 +133,7 @@ Dueños y superadministrador pueden configurar horario comercial, plazo de prepa
 
 Arquitectura debe resolver autenticación y permisos, Payload/Turso, almacenamiento privado, borrado y backups, antivirus/validación de adjuntos, buzón de correo, emails transaccionales, límites de archivos, protección de datos y futura pasarela real.
 
-Contenido debe aportar horario definitivo, activos visuales, catálogo y precios reales. La licencia de Pressworks debe verificarse antes de adaptar código o activos.
+Contenido debe aportar horario definitivo, activos visuales, catálogo y precios reales. La licencia/compra aplicable de Printop y de todos sus activos debe verificarse antes de adaptar o distribuir cualquier parte de la plantilla.
 
 ## Deuda de producto
 
